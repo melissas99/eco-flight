@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AirportSelector from './components/AirportSelector';
 import Result from './components/Result';
 import './App.css';
-import { fetchAirport, fetchAirports } from './repository/airportRepo';
+import { fetchAirport, fetchAirports, localSearchAirport } from './repository/airportRepo';
 import { calculateFootprint } from './repository/flightFootprintRepo';
 import Airport from './models/Airport';
 
@@ -26,9 +26,6 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log("selectedDeparture", selectedDeparture);
-    console.log("selectedArrival", selectedArrival);
-    console.log("passengerCount", passengerCount);
     if (selectedDeparture && selectedArrival && passengerCount > 0) {
       (async () => {
         const result = await calculateFootprint(selectedDeparture.attributes.iata, selectedArrival.attributes.iata, passengerCount);
@@ -42,23 +39,21 @@ const App: React.FC = () => {
 
   const onDepartureChange = async (airport: string) => {
     if (airport.trim() === '') {
-      // If the input is empty, reset to all airports
       const airports = await fetchAirports();
       setDepartureAirports(airports.filter(a => a != null));
     } else {
-      const res = await fetchAirport(airport);
-      setDepartureAirports(res ? [res] : []);
+      const res = await localSearchAirport(airport);
+      setDepartureAirports(res);
     }
   }
 
   const onArrivalChange = async (airport: string) => {
     if (airport.trim() === '') {
-      // If the input is empty, reset to all airports
       const airports = await fetchAirports();
       setArrivalAirports(airports.filter(a => a != null));
     } else {
-      const res = await fetchAirport(airport);
-      setArrivalAirports(res ? [res] : []);
+      const res = await localSearchAirport(airport);
+      setArrivalAirports(res);
     }
   }
 
