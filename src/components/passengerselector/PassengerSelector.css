@@ -1,0 +1,67 @@
+.passenger-selector {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.passenger-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.passenger-selector .input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.passenger-selector button {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.passenger-selector button:hover {
+    background-color: #f5f5f5;
+}
+
+.passenger-selector button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.passenger-selector input {
+    flex-grow: 1;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.passenger-selector input::-webkit-inner-spin-button,
+.passenger-selector input::-webkit-outer-spin-button {
+    -webkit-appearance: auto;
+    margin: 0;
+}
+
+.passenger-selector input[type=number] {
+    appearance: auto;
+}

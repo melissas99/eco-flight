@@ -5,28 +5,28 @@ export const calculateFootprint = async (departure: string, arrival: string, pas
                 "segments[0][origin]": departure,
                 "segments[0][destination]": arrival,
                 "cabin_class": 'economy',
-                "currencies[]": 'EUR' // TODO: add currencie support
+                "currencies[]": 'EUR'
             }).toString(),
             {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'Basic ODA4MDFlMTJkYTc0N2QxN2UxZjZkZTM5Og==' // Base64(username:passw)
+                    'Authorization': 'Basic ODA4MDFlMTJkYTc0N2QxN2UxZjZkZTM5Og==' 
                 },
             });
 
         if (response.ok) {
             const data = await response.json();
-            const totalFootprint = data.footprint * passengerCount; // Calcola l'impronta totale basata sul numero di passeggeri
+            const totalFootprint = data.footprint * passengerCount; 
             return {
                 co2PerPassenger: data.footprint,
                 co2Total: totalFootprint
             };
         } else {
-            console.error("Errore durante il calcolo dell'impronta ecologica:", response.statusText);
+            console.error("Error calculating the carbon footprint:", response.statusText);
             return null;
         }
     } catch (error) {
-        console.error("Errore durante il calcolo dell'impronta ecologica:", error);
+        console.error("Error calculating the carbon footprint:", error);
         return null;
     }
 };

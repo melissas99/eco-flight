@@ -1,0 +1,50 @@
+.result {
+    color: #FBA834;
+    background-color: #FFF5E6;
+    border: 1px solid #FFD699;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.info {
+    color: #0056b3;
+    background-color: #e6f3ff;
+    border: 1px solid #b8daff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.result .value {
+    font-size: 30px;
+}
+
+.result .co2-per-passenger .label {
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.result .co2-per-passenger .value {
+    color: #FBA834;
+}
+
+.result .co2-total .label {
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.result .co2-total .value {
+    color: #dc3545;
+}
+
+.result .co2-total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #FFD699;
+}

@@ -5,192 +5,120 @@
     font-family: 'Arial', sans-serif;
 }
 
-body {
+#root {
     background-color: #FBA834;
-    background-image: url('../public/plane2.png');
+    background-image: url('../public/assets/imgs/plane.png');
     background-repeat: no-repeat;
     background-size: 30% auto;
     background-position: top left;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    overflow: hidden;
-    animation: fly 5s linear infinite;
-}
-
-@keyframes fly {
-    0% {
-        background-position: -200px top;
-    }
-
-    100% {
-        background-position: 200%;
-    }
+    overflow-x: hidden;
+    animation: fly 6s linear infinite;
 }
 
 .container {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    width: 90%;
     position: relative;
     z-index: 1;
+    margin: 40px auto;
+}
+
+.form-group {
+    margin-bottom: 50px;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-align: center;
+    line-height: 1.3;
 }
-
-.airport-selector {
-    margin: 20px 0;
-}
-
-.airport-selector label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.airport-selector select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background: #f8f8f8;
-    transition: border 0.3s;
-}
-
-.airport-selector select:focus {
-    border: 1px solid #007bff;
-    outline: none;
-}
-
-.passenger-selector {
-    margin: 20px 0;
-}
-
-.passenger-selector label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.passenger-selector select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background: #f8f8f8;
-    transition: border 0.3s;
-}
-
-.passenger-selector select:focus {
-    border: 1px solid #007bff;
-    outline: none;
-}
-
-.result {
-    margin-top: 20px;
-    padding: 15px;
-    background: #e9f7ef;
-    border: 1px solid #6EC207;
-    border-radius: 5px;
-}
-
-.result p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #6EC207;
-}
-
-.result span {
-    font-weight: bold;
-    color: #FF5F40;
-}
-
-
-.airport-selector {
-    margin: 20px 0;
-}
-
-.css-yk16xz-control {
-    padding: 5px;
-    border-color: #ddd;
-}
-
-.css-1pahdxg-control {
-    border-color: #007bff;
-    box-shadow: none;
-}
-
-.css-26l3qy-menu {
-    z-index: 100;
-}
-
-
 
 @media (max-width: 600px) {
+    @keyframes fly {
+        0% {
+            background-position: -800px -50vh;
+            background-size: 50% auto;
+        }
+        100% {
+            background-position: calc(100% + 800px) 50vh;
+            background-size: 100% auto;
+        }
+    }
+
     body {
         background-size: 50% auto;
-        justify-content: center;
-        align-items: center;
+        background-position: top right;
     }
 
     .container {
-        padding: 15px;
-        max-width: 90%;
-        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        margin: 20px;
     }
 
     h1 {
-        font-size: 20px;
-    }
-
-    .result p {
-        font-size: 14px;
+        font-size: 24px;
+        margin-bottom: 25px;
     }
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
+    @keyframes fly {
+        0% {
+            background-position: -800px 0px;
+            background-size: 10% auto;
+        }
+        100% {
+            background-position: calc(100% + 800px) 50vh;
+            background-size: 60% auto;
+        }
+    }
+    
     body {
         background-size: 40% auto;
-        justify-content: center;
-        align-items: center;
     }
 
     .container {
-        padding: 20px;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    .result p {
-        font-size: 15px;
-    }
-}
-
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 700px;
+        padding: 35px;
+        width: 80%;
+        margin: 30px;
     }
 
     h1 {
         font-size: 26px;
     }
+}
 
-    .result p {
-        font-size: 18px;
+@media (min-width: 1200px) {
+    @keyframes fly {
+        0% {
+            background-position: -800px 0px;
+            background-size: 10% auto;
+        }
+        100% {
+            background-position: calc(100% + 800px) 50vh;
+            background-size: 60% auto;
+        }
+    }
+
+    .container {
+        width: 700px;
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 40px;
     }
 }
