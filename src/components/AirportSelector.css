@@ -1,0 +1,30 @@
+.airport-selector {
+    margin-bottom: 40px;
+}
+
+.airport-selector:last-of-type {
+    margin-bottom: 50px;
+}
+
+.airport-selector label {
+    display: block;
+    margin-bottom: 15px;  /* Aumentato */
+    font-weight: bold;
+    color: #333;
+}
+
+.airport-selector select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.airport-selector select:focus {
+    outline: none;
+    border-color: #FBA834;
+    box-shadow: 0 0 5px rgba(251, 168, 52, 0.5);
+}

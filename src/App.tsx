@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import AirportSelector from './components/AirportSelector';
-import Result from './components/Result';
+import AirportSelector from './components/airportselector/AirportSelector';
+import Result from './components/result/Result';
 import './App.css';
-import { fetchAirport, fetchAirports, localSearchAirport } from './repository/airportRepo';
+import { fetchAirports, localSearchAirport } from './repository/airportRepo';
 import { calculateFootprint } from './repository/flightFootprintRepo';
 import Airport from './models/Airport';
+import PassengerSelector from './components/passengerselector/PassengerSelector';
 
 const App: React.FC = () => {
   const [departureAirports, setDepartureAirports] = useState<Airport[]>([]);
@@ -18,7 +19,6 @@ const App: React.FC = () => {
   useEffect(() => {
     (async () => {
       const airports = await fetchAirports();
-      // Filter out any undefined or null airports
       const validAirports = airports.filter(airport => airport != null);
       setDepartureAirports(validAirports);
       setArrivalAirports(validAirports);
@@ -59,29 +59,23 @@ const App: React.FC = () => {
 
   return (
     <div className="container" style={{ position: 'relative', overflow: 'hidden' }}>
-      <h1>Calcolo Impronta Ecologica del Volo</h1>
+      <h1>Flight Carbon Footprint Calculation</h1>
       <AirportSelector
-        label="Aeroporto di Partenza"
+        label="Departure Airport"
         airports={departureAirports}
         onSelect={setSelectedDeparture}
         onInputChange={onDepartureChange}
       />
       <AirportSelector
-        label="Aeroporto di Arrivo"
+        label="Arrival Airport"
         airports={arrivalAirports}
         onSelect={setSelectedArrival}
         onInputChange={onArrivalChange}
       />
-      <div className="passenger-selector">
-        <label>Numero di Passeggeri</label>
-        <select value={passengerCount} onChange={(e) => setPassengerCount(Number(e.target.value))}>
-          {Array.from({ length: 10 }, (_, index) => (
-            <option key={index + 1} value={index + 1}>
-              {index + 1}
-            </option>
-          ))}
-        </select>
-      </div>
+      <PassengerSelector
+        passengerCount={passengerCount}
+        setPassengerCount={setPassengerCount}
+      />
       <Result co2PerPassenger={co2PerPassenger} co2Total={co2Total} />
     </div>
   );
