@@ -58,7 +58,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="container" style={{ position: 'relative', overflow: 'hidden' }}>
+    <div className="container">
       <h1>Flight Carbon Footprint Calculation</h1>
       <AirportSelector
         label="Departure Airport"

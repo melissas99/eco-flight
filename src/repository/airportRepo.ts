@@ -1,4 +1,4 @@
-import airportList from "../airportList";
+import airportList from "../utils/airportList";
 import Airport from "../models/Airport";
 
 export const fetchAirports = async (): Promise<Airport[]> => {

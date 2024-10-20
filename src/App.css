@@ -5,9 +5,9 @@
     font-family: 'Arial', sans-serif;
 }
 
-body {
+#root {
     background-color: #FBA834;
-    background-image: url('../public/plane2.png');
+    background-image: url('../public/assets/imgs/plane.png');
     background-repeat: no-repeat;
     background-size: 30% auto;
     background-position: top left;
@@ -20,14 +20,12 @@ body {
     animation: fly 6s linear infinite;
 }
 
-
-
 .container {
     background: #ffffff;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    width: 600px;
     width: 90%;
     position: relative;
     z-index: 1;
@@ -44,15 +42,6 @@ h1 {
     margin-bottom: 40px;
     text-align: center;
     line-height: 1.3;
-}
-
-/* Stile generale per tutti i componenti diretti del container */
-.container > * {
-    margin-bottom: 30px;
-}
-
-.container > *:last-child {
-    margin-bottom: 0;
 }
 
 @media (max-width: 600px) {
@@ -73,7 +62,8 @@ h1 {
     }
 
     .container {
-        padding: 30px;
+        width: 80%;
+        padding: 20px;
         margin: 20px;
     }
 
@@ -101,7 +91,7 @@ h1 {
 
     .container {
         padding: 35px;
-        max-width: 80%;
+        width: 80%;
         margin: 30px;
     }
 
@@ -123,7 +113,7 @@ h1 {
     }
 
     .container {
-        max-width: 700px;
+        width: 700px;
         padding: 50px;
     }
 

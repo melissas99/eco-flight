@@ -9,8 +9,8 @@ Live site: [Eco Flight](https://eco-flight.netlify.app/)
 ## Screenshots
 
 <p>
-<img src="./public/screenshots/mobile.png" width="200">
-<img src="./public/screenshots/web.png" width="400">
+<img src="./public/assets/screenshots/mobile.png" width="200">
+<img src="./public/assets/screenshots/web.png" width="400">
 </p>
 
 ## Features
