@@ -8,11 +8,10 @@ Live site: [Eco Flight](https://eco-flight.netlify.app/)
 
 ## Screenshots
 
-### Web Version
-![Web Version](web.png)
-
-### Mobile Version
-![Mobile Version](mobile.png)
+<p>
+<img src="./public/screenshots/mobile.png" width="200">
+<img src="./public/screenshots/web.png" width="400">
+</p>
 
 ## Features
 
